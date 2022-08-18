@@ -23,8 +23,8 @@
             });
         });
 
-        const markerCluster = new MarkerClusterer({ map, markers });
+        var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
             
 
-    };
+    }
 

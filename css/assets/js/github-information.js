@@ -15,8 +15,6 @@ function userInformationHTML(user) {
         </div>`;
 }
 
-
-
 function repoInformationHTML(repos) {
     if (repos.length == 0) {
         return `<div class="clearfix repo-list">No repos!</div>`;
@@ -38,7 +36,6 @@ function repoInformationHTML(repos) {
             </div>`;
 }
 
-
 function fetchGitHubInformation(event) {
 
     var username = $("#gh-username").val();
@@ -49,7 +46,7 @@ function fetchGitHubInformation(event) {
 
     $("#gh-user-data").html(
         `<div id="loader">
-            <img src="assets/css/loader.gif" alt="loading..." />
+            <img src="css/assets/js/loader.gif" alt="loading..." />
         </div>`);
 
     $.when(
