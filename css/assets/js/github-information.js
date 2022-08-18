@@ -11,4 +11,23 @@ $("#gh-user-data").html(
    <img src = "css/assets/js/loader.gif" alt= "...loading" />
 </div>`);
 
+$.when(
+    $.getJSON(`http://api.github.com/users/${username}`)
+    ).then(
+   function(response){
+   var userData = response;
+   $("#gh-user-data").html(userInformationHtml(userData));
+   },  function (errorResponse){
+        if (errorResponse.status === 404) {
+       $("#hg-user-data").html(`
+       <h2> No information found on User ${username}</h2>`)
+       
+        } else {
+        console.log(errorResponse);
+        $("#gh-user-data").html (
+        `<h2>Error: ${errorResponse.responseJSON.message}</h2>`);
+        }
+   });
+
 }
+
